@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Palindrome Checker</title>
+</head>
+<body>
+  <h1>Palindrome Checker</h1>
+  <input type="text" id="input" placeholder="Enter a number or a sentence">
+  <button onclick="checkPalindrome()">Check</button>
+  <p id="result"></p>
+
+  <script>
+    function checkPalindrome() {
+      const inputText = document.getElementById("input").value;
+      const cleanedText = inputText.replace(/\s/g, ''); // Remove spaces
+      const reversedText = cleanedText.split('').reverse().join('');
+      const resultElement = document.getElementById("result");
+
+      if (cleanedText === reversedText) {
+        resultElement.textContent = `${inputText} is a palindrome`;
+      } else {
+        resultElement.textContent = `${inputText} is not a palindrome`;
+      }
+    }
+  </script>
+</body>
+</html>
